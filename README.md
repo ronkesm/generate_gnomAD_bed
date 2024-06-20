@@ -9,7 +9,7 @@ An example use case: The dndscv R package provides a sitednds function that comp
 ## How
 
 This is a five-step process:
-1. Download SNP vcfs 
+1. Download SNP VCFs 
 2. Extract chr + alt + ref + AF and put into tsv files for each chromosome ( + remove any SNPs with an AF=0.00000) 
 3. Remove the original files (they're huge. You may need more information from them - in which case - alter the `bcftools query` argument) 
 4. Merge each tsv file containing the SNPs for each chromosome.
