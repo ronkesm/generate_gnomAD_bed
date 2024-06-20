@@ -32,9 +32,9 @@ https://storage.googleapis.com/gcp-public-data--gnomad/release/4.1/vcf/genomes/g
 2. Run `GnomadV4.1.DownloadFilterAndExtractLoci.sh (and/or GnomadV4.1.DownloadFilterAndExtractLociExome)`. 
 This script is formatted to be submitted to a HPC with 'qsub'. Replace the `urls_file` argument in the script with a path to the gnomadFilesChr(Exomes).txt file. This takes 24-48 hours.
 
-3. Run `GnomadV4.1.MergeChromosomes.sh` in the same directory
+3. Run `GnomadV4.1.MergeChromosomes.sh` in the same directory. 
 
-4. You should now have a file called `CombinedExomeGenomeGnomadV4.1.Filter.bed` that looks like this:
+4. You should now have a file called `CombinedExomeGenomeGnomadV4.1.Filter.bed` that looks like this (Size ~ 28.5 GB):
 
 ```
 chr1    12137   12138   C       A       0.00909091
