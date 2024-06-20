@@ -1,4 +1,4 @@
-# Generate gnomad bed file for filtering VCF files
+# Generate gnomad bed file for filtering VCFs
 
 ## Why
 
