@@ -1,1 +1,1 @@
-# generate_gnomad_v4.1_bed_file
+# Generate gnomad bed file for filtering VCF files
