@@ -2,14 +2,14 @@
 
 ## Why
 
-Germline filtering is important for accurate SNV calling in whole genomes. Databases (eg. Gnomad) containing germline SNPs are routinely updated but not always provided in a user-friendly format. Gnomad files are provided per-chromosome with a lot of extraneous information (creating very large files) unnecessary for routine SNV filtering. They are also split into SNPs identified from exomes versus genomes. These scripts download the up to date (as of 20-Jun-2024 at least) gnomad v.4.1 database files for both exomes and genomes and generates a single bed file containing chromosome, ref + alt alleles, and the population allelic frequency. Example scripts to filter SNV files using the resultant bed file are also provided.
+Germline filtering is important for accurate SNV calling in whole genomes. Databases (eg. Gnomad) containing germline SNPs are routinely updated but not always provided in a user-friendly format. Gnomad files are provided per-chromosome with a lot of extraneous information (creating very large files) unnecessary for routine SNV filtering. They are also split into SNPs identified from exomes versus genomes (non-overlapping). These scripts download the up to date (as of 20-Jun-2024 at least) gnomad v.4.1 database files for both exomes and genomes and generates a single bed file containing chromosome, ref + alt alleles, and the population allelic frequency. Example scripts to filter SNV files using the resultant bed file are also provided.
 
 **Example use case:** The dndscv R package provides a sitednds function that computes dNdS ratios per specific mutation (rather than gene). We've found this function to be very sensitive to germline SNP contamination. In this case, filtering tumour VCFs using a more stringent population frequency cut-off allows us to produce a more refined analysis.
 
 ## How
 
 This is a five-step process:
-1. Download SNP VCFs 
+1. Download SNP VCFs from both exomes and genomes
 2. Extract chr + alt + ref + AF and put into tsv files for each chromosome ( + remove any SNPs with an AF=0.00000) 
 3. Remove the original files (they're huge. You may need more information from them - in which case - alter the `bcftools query` argument) 
 4. Merge each tsv file containing the SNPs for each chromosome.
