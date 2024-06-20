@@ -34,8 +34,16 @@ This script is formatted to be submitted to a HPC with 'qsub'. Replace the `urls
 
 3. Run `GnomadV4.1.MergeChromosomes.sh` in the same directory
 
-4. You should now have a file called `CombinedExomeGenomeGnomadV4.1.Filter.bed`
+4. You should now have a file called `CombinedExomeGenomeGnomadV4.1.Filter.bed` that looks like this:
 
-5. Run `FilterVCF_Gnomad_PASS` providing a directory with VCFs, an AF threshold [OR] Bed file with SNP variants in the same format as `CombinedExomeGenomeGnomadV4.1.Filter.bed`. The last argument `(yes/no)` determines whether the new .bed file with your chosen AF threshold is removed after execution or not (so you can re-run the script without generating a new bed file). An example `qsub` script is provided in `FilterVCFJob.sh`. In your directory with VCFs, you should now have `[filename].filtered.vcf.gz` files
+```
+chr1    12137   12138   C       A       0.00909091
+chr1    12194   12195   T       C       0.00374065
+chr1    12197   12198   G       C       0.361991
+chr1    12200   12201   C       G       0.00313808
+chr1    12224   12225   C       T       0.000443262
+```
+
+6. Run `FilterVCF_Gnomad_PASS` providing a directory with VCFs, an AF threshold [OR] Bed file with SNP variants in the same format as `CombinedExomeGenomeGnomadV4.1.Filter.bed`. The last argument `(yes/no)` determines whether the new .bed file with your chosen AF threshold is removed after execution or not (so you can re-run the script without generating a new bed file). An example `qsub` script is provided in `FilterVCFJob.sh`. In your directory with VCFs, you should now have `[filename].filtered.vcf.gz` files
 
 
