@@ -15,7 +15,7 @@ This is a five-step process:
 4. Merge each tsv file containing the SNPs for each chromosome.
 5. Filter VCFs with a custom population frequency cut-off (also filters out all non-`PASS` variants)
 
-`GnomadV4.1.DownloadFilterAndExtractLoci.sh` takes care of steps 1-3, step 4 is done by `GnomadV4.1.MergeChromosomes.sh`, step 5 is done by `FilterVCF_Gnomad_PASS.sh` 
+`GnomadV4.1.DownloadFilterAndExtractLoci.sh` takes care of steps 1-3, step 4 is done by `GnomadV4.1.MergeChromosomes.sh`, step 5 is done by `FilterVCF_Gnomad_PASS_debug.sh` 
 
 
 
