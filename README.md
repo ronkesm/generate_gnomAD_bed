@@ -44,6 +44,9 @@ chr1    12200   12201   C       G       0.00313808
 chr1    12224   12225   C       T       0.000443262
 ```
 
-6. Run `FilterVCF_Gnomad_PASS` providing a directory with VCFs, an AF threshold [OR] Bed file with SNP variants in the same format as `CombinedExomeGenomeGnomadV4.1.Filter.bed`. The last argument `(yes/no)` determines whether the new .bed file with your chosen AF threshold is removed after execution or not (so you can re-run the script without generating a new bed file). An example `qsub` script is provided in `FilterVCFJob.sh`. In your directory with VCFs, you should now have `[filename].filtered.vcf.gz` files
+6. Run `FilterVCF_Gnomad_PASS_debug.sh` providing a directory with VCFs, an AF threshold [OR] Bed file with SNP variants in the same format as `CombinedExomeGenomeGnomadV4.1.Filter.bed`. The last argument `(yes/no)` determines whether the new .bed file with your chosen AF threshold is removed after execution or not (so you can re-run the script without generating a new bed file). In your directory with VCFs, you should now have `[filename].filtered.vcf.gz` files.
 
-**Disclaimer: I used ChatGPT to help design _some_ of this code. You may want to verify that the script does what you want it to do before relying on its results.**
+**Disclaimers**: 
+1. The script `FilterVCF_Gnomad_PASS_debug.sh` uses different amounts of ram depending on the chosen AF filter (0.00001 > 0.01). I have found that 128 GB is sufficient for any filter.
+2. This script was, in part, designed with ChatGPT. I have amended these parts and verified that it works as intended, but you may want to test it before relying on its results.
+3. Tested on Strelka2 and SAGE VCFs. Should work on all VCFs as long as columns follow the CHROM, POS, ID, REF, ALT convention.
