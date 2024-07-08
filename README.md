@@ -1,4 +1,4 @@
-# Generate gnomAD bed file for filtering VCFs
+# Generate gnomAD bed file for filtering tumour VCFs
 
 ## Why
 
